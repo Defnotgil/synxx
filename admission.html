@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>San State University</title>
+    <link rel="stylesheet" href="admission.css">
+</head>
+<body>
+    <header class="page-header">
+    <nav id="original-navbar" class="navbar">
+        <div class="branding">
+            <img src="university.png" alt="University Logo">
+            <div class="branding-text">
+                <h1>SAN</h1> 
+                <h3>UNIVERSITY</h3>
+            </div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="enrollment.html">Enrollment ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="enrollment.html">Courses</a></li>
+                    <li><a href="enrollment.html#requirements">Requirements</a></li>
+                    <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                    <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="admission.html" class="active">Admission</a></li>            
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <nav id="floating-navbar" class="navbar floating">
+        <div class="branding">
+            <img src="university.png" alt="University Logo">
+            <div class="branding-text">
+                <h1>SAN</h1> 
+                <h3>UNIVERSITY</h3>
+            </div>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="enrollment.html">Enrollment ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="enrollment.html">Courses</a></li>
+                    <li><a href="enrollment.html#requirements">Requirements</a></li>
+                    <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                    <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="admission.html" class="active">Admission</a></li>            
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    </header>
+
+    <main class="admission-main">
+        <section id="admission-options">
+            <h1 id="admission-heading">OFFICE OF ADMISSION</h1>
+            <h2 id="admission2-heading">Online Application</h2>
+            <div class="admission-buttons">
+                <button onclick="showForm('undergraduate')">Undergraduate</button>
+                <button onclick="showForm('graduate')">Graduate</button>
+                <button onclick="showForm('international')">International Students</button>
+                <button onclick="showForm('transfer')">Transfer Applicants</button>
+                <button onclick="showForm('freshmen')">Freshman Admission</button>
+                <button onclick="showForm('continuing')">Continuing Student Admission</button>
+
+            </div>
+        </section>
+    
+        <section id="forms-section" style="display:none;">
+            <button id="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
+            <div id="form-undergraduate" class="form-container" style="display:none;">
+                <h2>Undergraduate Application</h2>
+                <form id="undergraduate-form" action="#" method="POST">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="first-name" required>
+    
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="last-name" required>
+    
+                    <label for="high-school">High School Graduated From:</label>
+                    <input type="text" id="high-school" name="high-school" required>
+    
+                    <label for="gpa">High School GPA:</label>
+                    <input type="text" id="gpa" name="gpa" required>
+
+                    <label for="psa">PSA Birth Certificate:</label>
+                    <input type="file" id="psa" name="psa">
+
+                    <label for="gmrc">Certificate of Good Moral Character:</label>
+                    <input type="file" id="gmrc" name="gmrc">
+    
+                    <label for="exam-score">Entrance Exam Score (optional):</label>
+                    <input type="text" id="exam-score" name="exam-score">
+    
+                    <input type="submit" value="Submit Application">
+                </form>
+            </div>
+    
+            <div id="form-graduate" class="form-container" style="display:none;">
+                <h2>Graduate Application</h2>
+                <form id="graduate-form" action="#" method="POST">
+                    <label for="first-name-graduate">First Name:</label>
+                    <input type="text" id="first-name-graduate" name="first-name-graduate" required>
+    
+                    <label for="last-name-graduate">Last Name:</label>
+                    <input type="text" id="last-name-graduate" name="last-name-graduate" required>
+    
+                    <label for="bachelor-degree">Bachelor's Degree Program:</label>
+                    <input type="text" id="bachelor-degree" name="bachelor-degree" required>
+    
+                    <label for="gpa-graduate">Undergraduate GPA:</label>
+                    <input type="text" id="gpa-graduate" name="gpa-graduate" required>
+    
+                    <label for="resume">Upload Resume (optional):</label>
+                    <input type="file" id="resume" name="resume">
+    
+                    <input type="submit" value="Submit Application">
+                </form>
+            </div>
+    
+            <div id="form-international" class="form-container" style="display:none;">
+                <h2>International Students Application</h2>
+                <form id="international-form" action="#" method="POST">
+                    <label for="first-name-international">First Name:</label>
+                    <input type="text" id="first-name-international" name="first-name-international" required>
+    
+                    <label for="last-name-international">Last Name:</label>
+                    <input type="text" id="last-name-international" name="last-name-international" required>
+    
+                    <label for="passport">Passport Number:</label>
+                    <input type="text" id="passport" name="passport" required>
+    
+                    <label for="toefl-score">TOEFL/IELTS Score:</label>
+                    <input type="text" id="toefl-score" name="toefl-score" required>
+    
+                    <input type="submit" value="Submit Application">
+                </form>
+            </div>
+
+<div id="form-freshmen" class="form-container" style="display:none;">
+    <h2>Freshmen Admission Application</h2>
+    <form id="freshmen-form" action="#" method="POST">
+        <label for="first-name-freshmen">First Name:</label>
+        <input type="text" id="first-name-freshmen" name="first-name-freshmen" required>
+
+        <label for="last-name-freshmen">Last Name:</label>
+        <input type="text" id="last-name-freshmen" name="last-name-freshmen" required>
+
+        <label for="birthdate-freshmen">Birthdate:</label>
+        <input type="date" id="birthdate-freshmen" name="birthdate-freshmen" required>
+
+        <label for="report-card">Original and Photocopy of Senior High School Report Card(Form137):</label>
+        <input type="file" id="report-card" name="report-card">
+
+        <label for="psa">PSA Birth Certificate:</label>
+        <input type="file" id="psa" name="psa">
+
+        <label for="gmrc">Certificate of Good Moral Character:</label>
+        <input type="file" id="gmrc" name="gmrc">
+
+        <label for="pic">2 pieces 2x2 ID Picture (white background):</label>
+        <input type="file" id="pic" name="pic">
+
+        <label for="email-freshmen">Email:</label>
+        <input type="email" id="email-freshmen" name="email-freshmen" required>
+
+        <label for="highschool-name">High School Name:</label>
+        <input type="text" id="highschool-name" name="highschool-name" required>
+
+        <input type="submit" value="Submit Application">
+    </form>
+</div>
+
+<div id="form-continuing" class="form-container" style="display:none;">
+    <h2>Continuing Student Admission Application</h2>
+    <form id="continuing-form" action="#" method="POST">
+        <label for="first-name-continuing">First Name:</label>
+        <input type="text" id="first-name-continuing" name="first-name-continuing" required>
+
+        <label for="last-name-continuing">Last Name:</label>
+        <input type="text" id="last-name-continuing" name="last-name-continuing" required>
+
+        <label for="student-id-continuing">Student ID Number:</label>
+        <input type="text" id="student-id-continuing" name="student-id-continuing" required>
+
+        <label for="completed-units">Units Completed:</label>
+        <input type="text" id="completed-units" name="completed-units" required>
+
+        <label for="gpa-continuing">Current GPA:</label>
+        <input type="text" id="gpa-continuing" name="gpa-continuing" required>
+
+        <input type="submit" value="Submit Application">
+    </form>
+</div>
+
+    
+            <div id="form-transfer" class="form-container" style="display:none;">
+                <h2>Transfer Applicants Application</h2>
+                <form id="transfer-form" action="#" method="POST">
+                    <label for="first-name-transfer">First Name:</label>
+                    <input type="text" id="first-name-transfer" name="first-name-transfer" required>
+    
+                    <label for="last-name-transfer">Last Name:</label>
+                    <input type="text" id="last-name-transfer" name="last-name-transfer" required>
+    
+                    <label for="current-school">Current School:</label>
+                    <input type="text" id="current-school" name="current-school" required>
+
+                    <label for="transfer">Honorable Dismissal / Certificate of Transfer:</label>
+                    <input type="file" id="transfer" name="transfer">
+            
+                    <label for="grades">Transcript of Records or Certified Copy of Grades:</label>
+                    <input type="file" id="grades" name="grades">
+            
+                    <label for="gmrc">Certificate of Good Moral Chracter:</label>
+                    <input type="file" id="gmrc" name="gmrc">
+            
+                    <label for="psa">PSA Birth Certificate (Photocopy):</label>
+                    <input type="file" id="psa" name="psa">
+    
+                    <label for="pic">2 pieces 2x2 ID Picture (white background):</label>
+                    <input type="file" id="pic" name="pic">
+            
+
+                    <label for="transfer-courses">Courses Taken:</label>
+                    <textarea id="transfer-courses" name="transfer-courses" required></textarea>
+    
+                    <input type="submit" value="Submit Application">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: gilbertkilakiga02@gmail.com</p>
+                <p>Phone: +64 9564357649</p>
+            </div>
+            <div class="socials">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/gilbert.kilakiga" target="_blank">Facebook</a> |
+                <a href="https://www.instagram.com/not.toti?igsh=NzYybzJvbGtmdTVr" target="_blank">Instagram</a> |
+                <a href="https://www.x.com/" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let lastScrollTop = 0;
+        const originalNavbar = document.getElementById('original-navbar');
+        const floatingNavbar = document.getElementById('floating-navbar');
+
+        function toggleNavbar(currentScroll) {
+            if (currentScroll <= 0) {
+                floatingNavbar.style.display = "none";
+                originalNavbar.style.display = "flex";
+            } else {
+                floatingNavbar.style.display = "flex";
+                originalNavbar.style.display = "none";
+            }
+        }
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.scrollY;
+            toggleNavbar(currentScroll);
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    </script>
+
+
+<script>
+function showForm(type) {
+    document.getElementById('admission-options').style.display = 'none';
+    document.getElementById('forms-section').style.display = 'block';
+    document.getElementById('back-button').style.display = 'inline-block';
+
+    document.getElementById('form-undergraduate').style.display = 'none';
+    document.getElementById('form-graduate').style.display = 'none';
+    document.getElementById('form-international').style.display = 'none';
+    document.getElementById('form-transfer').style.display = 'none';
+    document.getElementById('form-freshmen').style.display = 'none';
+    document.getElementById('form-continuing').style.display = 'none';
+
+    if (type === 'freshmen') {
+        document.getElementById('form-freshmen').style.display = 'block';
+    } else if (type === 'continuing') {
+        document.getElementById('form-continuing').style.display = 'block';
+    } else if (type === 'undergraduate') {
+        document.getElementById('form-undergraduate').style.display = 'block';
+    } else if (type === 'graduate') {
+        document.getElementById('form-graduate').style.display = 'block';
+    } else if (type === 'international') {
+        document.getElementById('form-international').style.display = 'block';
+    } else if (type === 'transfer') {
+        document.getElementById('form-transfer').style.display = 'block';
+    }
+}
+
+function goBack() {
+    document.getElementById('forms-section').style.display = 'none';
+    document.getElementById('back-button').style.display = 'none';
+    document.getElementById('admission-options').style.display = 'block';
+}
+
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const forms = document.querySelectorAll('form');
+        
+        forms.forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                
+                form.style.display = 'none';
+                
+                const thankYouMessage = document.createElement('div');
+                thankYouMessage.innerHTML = `
+                    <h2 style="color: #004080; text-align: center;">Thank you for applying!</h2>
+                    <p style="text-align: center;">We have received your application. We will contact you soon!</p>
+                `;
+                form.parentElement.appendChild(thankYouMessage);
+            });
+        });
+    });
+</script>
+</body>
+</html>

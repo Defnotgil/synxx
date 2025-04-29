@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>San State University</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header>
+        <nav id="original-navbar" class="navbar">
+            <div class="branding">
+                <img src="university.png" alt="University Logo">
+                <div class="branding-text">
+                    <h1>SAN</h1> 
+                    <h3>UNIVERSITY</h3>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="enrollment.html">Enrollment ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="enrollment.html">Courses</a></li>
+                        <li><a href="enrollment.html#requirements">Requirements</a></li>
+                        <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                        <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="admission.html">Admission</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+        <nav id="floating-navbar" class="navbar floating">
+            <div class="branding">
+                <img src="university.png" alt="University Logo">
+                <div class="branding-text">
+                    <h1>SAN</h1> 
+                    <h3>UNIVERSITY</h3>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="enrollment.html" >Enrollment ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="enrollment.html">Courses</a></li>
+                        <li><a href="enrollment.html#requirements">Requirements</a></li>
+                        <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                        <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="admission.html">Admission</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+        <div class="home">
+            <h2>Knowledge Inspires Change</h2>
+            <p>Learning at San State University empowers future leaders, fuels innovation, and transforms communities—driving progress from classrooms to the world stage.</p>    
+            
+            <h2>Mission</h2>
+            <p>Our mission is to provide accessible, high-quality education and to foster a learning environment where students thrive academically, personally, and professionally.            </p>
+        
+            <h2>Vission</h2>
+            <p>Our vision is to be a premier university known for shaping global leaders and inspiring positive change.</p>
+        
+            <h2>Core Values</h2>
+            <p>Excellence
+
+                Innovation
+                
+                Diversity
+                
+                Community engagement
+                
+                Integrity</p>
+
+        </div>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: gilbertkilakiga02@gmail.com</p>
+                    <p>Phone: +64 9564357649</p>
+                </div>
+                <div class="socials">
+                    <h3>Follow Us</h3>
+                    <a href="https://www.facebook.com/gilbert.kilakiga" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com/not.toti?igsh=NzYybzJvbGtmdTVr" target="_blank">Instagram</a> |
+                    <a href="https://www.x.com/" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </footer>
+        
+        
+    </header>
+<script>
+    let lastScrollTop = 0;
+    const originalNavbar = document.getElementById('original-navbar');
+    const floatingNavbar = document.getElementById('floating-navbar');
+
+    function toggleNavbar(currentScroll) {
+        if (currentScroll <= 0) {
+            floatingNavbar.style.display = "none";
+            originalNavbar.style.display = "flex";
+        } else {
+            floatingNavbar.style.display = "flex";
+            originalNavbar.style.display = "none";
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.scrollY;
+        toggleNavbar(currentScroll);
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+</script>
+</body>
+</html>

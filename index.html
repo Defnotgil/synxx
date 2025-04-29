@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>San State University</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="original-navbar" class="navbar">
+            <div class="branding">
+                <img src="university.png" alt="University Logo">
+                <div class="branding-text">
+                    <h1>SAN</h1> 
+                    <h3>UNIVERSITY</h3>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="enrollment.html">Enrollment ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="enrollment.html">Courses</a></li>
+                        <li><a href="enrollment.html#requirements">Requirements</a></li>
+                        <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                        <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="admission.html">Admission</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <nav id="floating-navbar" class="navbar floating">
+            <div class="branding">
+                <img src="university.png" alt="University Logo">
+                <div class="branding-text">
+                    <h1>SAN</h1> 
+                    <h3>UNIVERSITY</h3>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="enrollment.html" >Enrollment ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="enrollment.html">Courses</a></li>
+                        <li><a href="enrollment.html#requirements">Requirements</a></li>
+                        <li><a href="enrollment.html#howtoenroll">How to Enroll</a></li>
+                        <li><a href="enrollment.html#tuition">Tuition & Fees</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="admission.html">Admission</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="home">
+            <h2>Knowledge Inspires Change</h2>
+            <p>Learning at San State University empowers future leaders, fuels innovation, and transforms communities—driving progress from classrooms to the world stage.</p>    
+        </div>
+        <section class="info-section">
+            <h1>TOP COURSES</h1>
+            <div class="IT">
+                <img src="it.jpg" alt="Information Technology">
+                <div class="it-text">
+                    <h3>Information Techmology</h3>
+                    <p>Dive into the dynamic world of technology with our IT program. Learn software development, cybersecurity, data analysis, and more — all while gaining hands-on experience with the latest tech tools. Our graduates are equipped to lead in a digital-first world and thrive in global tech industries.</p>
+                </div>
+            </div>
+        
+            <div class="nursing">
+                <img src="nursing.jpg" alt="nursing">
+                <div class="nursing-text">
+                    <h3>Nursing</h3>
+                    <p>Our Nursing program blends scientific knowledge with human care. Students receive rigorous training in clinical skills, patient care, and healthcare ethics — all under the guidance of experienced professionals. Be part of a respected tradition that heals, helps, and makes a difference every day.</p>
+                </div>
+            </div>
+
+            <div class="Engineering">
+                <img src="engineering.jpg" alt="engineering">
+                <div class="engineering-text">
+                    <h3>Engineering</h3>
+                    <p>From infrastructure to innovation, our Engineering program prepares students to design, construct, and revolutionize the world around them. Whether it's civil, mechanical, or electrical, students gain problem-solving skills, technical expertise, and the creativity to shape tomorrow.</p>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Email: gilbertkilakiga02@gmail.com</p>
+                    <p>Phone: +64 9564357649</p>
+                </div>
+                <div class="socials">
+                    <h3>Follow Us</h3>
+                    <a href="https://www.facebook.com/gilbert.kilakiga" target="_blank">Facebook</a> |
+                    <a href="https://www.instagram.com/not.toti?igsh=NzYybzJvbGtmdTVr" target="_blank">Instagram</a> |
+                    <a href="https://www.x.com/" target="_blank">Twitter</a>
+                </div>
+            </div>
+        </footer>
+        
+        
+    </header>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.scrollY;
+            const maxScroll = 500; 
+            const opacity = Math.min(scrollTop / maxScroll, 1);
+            header.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, ${0.5 + opacity * 0.5}),
+                                                            rgba(0, 0, 0, ${0.5 + opacity * 0.5})),
+                                                            url('building.jpg')`;
+        });
+    </script>
+<script>
+    let lastScrollTop = 0;
+    const originalNavbar = document.getElementById('original-navbar');
+    const floatingNavbar = document.getElementById('floating-navbar');
+
+    function toggleNavbar(currentScroll) {
+        if (currentScroll <= 0) {
+            floatingNavbar.style.display = "none";
+            originalNavbar.style.display = "flex";
+        } else {
+            floatingNavbar.style.display = "flex";
+            originalNavbar.style.display = "none";
+        }
+    }
+
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.scrollY;
+        toggleNavbar(currentScroll);
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+</script>
+</script>
+
+
+    
+</body>
+</html>

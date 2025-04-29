@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                                      rgba(0, 0, 0, 0.5)),
+                                      url('building.jpg');
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.branding-text{
+    display: flex;
+    flex-direction: column;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    transition: top 0.03s;
+    background: none;
+}
+
+.navbar.floating {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+#original-navbar {
+    display: flex;
+}
+
+#floating-navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.branding img {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url('building.jpg');
+    font-family: 'Arial', sans-serif;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.branding h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 60px;
+}
+.branding h3{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.home {
+    max-width: 800px;
+    margin: 100px auto 0 auto;
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.home h2 {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.home p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: 0.5s ease;
+}
+
+ul li a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+}
+
+ul li.active a {
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+}
+ul li a.active {
+    background-color: white;
+    color: black;
+    border-radius: 18px;
+}
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 160px;
+    z-index: 1000;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 100px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info, .socials {
+    margin: 10px 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: gray;
+}
+
