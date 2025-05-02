@@ -75,8 +75,8 @@
         </section>
     
         <section id="forms-section" style="display:none;">
-            <button id="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
             <div id="form-undergraduate" class="form-container" style="display:none;">
+                <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
                 <h2>Undergraduate Application</h2>
                 <form id="undergraduate-form" action="#" method="POST">
                     <label for="first-name">First Name:</label>
@@ -104,8 +104,9 @@
                 </form>
             </div>
     
-            <div id="form-graduate" class="form-container" style="display:none;">
-                <h2>Graduate Application</h2>
+            <div id="form-graduate" class="form-container" style="display:none;">            <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
+            <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
+            <h2>Graduate Application</h2>
                 <form id="graduate-form" action="#" method="POST">
                     <label for="first-name-graduate">First Name:</label>
                     <input type="text" id="first-name-graduate" name="first-name-graduate" required>
@@ -127,6 +128,7 @@
             </div>
     
             <div id="form-international" class="form-container" style="display:none;">
+            <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
                 <h2>International Students Application</h2>
                 <form id="international-form" action="#" method="POST">
                     <label for="first-name-international">First Name:</label>
@@ -146,6 +148,7 @@
             </div>
 
 <div id="form-freshmen" class="form-container" style="display:none;">
+    <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
     <h2>Freshmen Admission Application</h2>
     <form id="freshmen-form" action="#" method="POST">
         <label for="first-name-freshmen">First Name:</label>
@@ -180,6 +183,7 @@
 </div>
 
 <div id="form-continuing" class="form-container" style="display:none;">
+    <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
     <h2>Continuing Student Admission Application</h2>
     <form id="continuing-form" action="#" method="POST">
         <label for="first-name-continuing">First Name:</label>
@@ -203,6 +207,7 @@
 
     
             <div id="form-transfer" class="form-container" style="display:none;">
+                <button class="back-button" onclick="goBack()" style="display:none; margin-bottom: 20px;">← Back</button>
                 <h2>Transfer Applicants Application</h2>
                 <form id="transfer-form" action="#" method="POST">
                     <label for="first-name-transfer">First Name:</label>
@@ -258,21 +263,21 @@
         let lastScrollTop = 0;
         const originalNavbar = document.getElementById('original-navbar');
         const floatingNavbar = document.getElementById('floating-navbar');
-
-        function toggleNavbar(currentScroll) {
+    
+        window.addEventListener('scroll', function () {
+            const currentScroll = window.scrollY;
+    
             if (currentScroll <= 0) {
                 floatingNavbar.style.display = "none";
                 originalNavbar.style.display = "flex";
-            } else {
+            } else if (currentScroll < lastScrollTop) {
                 floatingNavbar.style.display = "flex";
                 originalNavbar.style.display = "none";
+            } else {
+                floatingNavbar.style.display = "none";
             }
-        }
-
-        window.addEventListener('scroll', function() {
-            const currentScroll = window.scrollY;
-            toggleNavbar(currentScroll);
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    
+            lastScrollTop = currentScroll;
         });
     </script>
 
@@ -281,34 +286,32 @@
 function showForm(type) {
     document.getElementById('admission-options').style.display = 'none';
     document.getElementById('forms-section').style.display = 'block';
-    document.getElementById('back-button').style.display = 'inline-block';
-
-    document.getElementById('form-undergraduate').style.display = 'none';
-    document.getElementById('form-graduate').style.display = 'none';
-    document.getElementById('form-international').style.display = 'none';
-    document.getElementById('form-transfer').style.display = 'none';
-    document.getElementById('form-freshmen').style.display = 'none';
-    document.getElementById('form-continuing').style.display = 'none';
-
-    if (type === 'freshmen') {
-        document.getElementById('form-freshmen').style.display = 'block';
-    } else if (type === 'continuing') {
-        document.getElementById('form-continuing').style.display = 'block';
-    } else if (type === 'undergraduate') {
-        document.getElementById('form-undergraduate').style.display = 'block';
-    } else if (type === 'graduate') {
-        document.getElementById('form-graduate').style.display = 'block';
-    } else if (type === 'international') {
-        document.getElementById('form-international').style.display = 'block';
-    } else if (type === 'transfer') {
-        document.getElementById('form-transfer').style.display = 'block';
+    document.querySelectorAll('.form-container').forEach(form => {
+        form.style.display = 'none';
+    });
+    document.querySelectorAll('.back-button').forEach(btn => {
+        btn.style.display = 'none';
+    });
+    const formToShow = document.getElementById(`form-${type}`);
+    if (formToShow) {
+        formToShow.style.display = 'block';
+        const backButton = formToShow.querySelector('.back-button');
+        if (backButton) {
+            backButton.style.display = 'inline-block';
+        }
     }
 }
 
 function goBack() {
     document.getElementById('forms-section').style.display = 'none';
-    document.getElementById('back-button').style.display = 'none';
     document.getElementById('admission-options').style.display = 'block';
+    document.querySelectorAll('.form-container').forEach(form => {
+        form.style.display = 'none';
+    });
+
+    document.querySelectorAll('.back-button').forEach(btn => {
+        btn.style.display = 'none';
+    });
 }
 
 </script>

@@ -118,25 +118,22 @@
     const originalNavbar = document.getElementById('original-navbar');
     const floatingNavbar = document.getElementById('floating-navbar');
 
-    function toggleNavbar(currentScroll) {
+    window.addEventListener('scroll', function () {
+        const currentScroll = window.scrollY;
+
         if (currentScroll <= 0) {
             floatingNavbar.style.display = "none";
             originalNavbar.style.display = "flex";
-        } else {
+        } else if (currentScroll < lastScrollTop) {
             floatingNavbar.style.display = "flex";
             originalNavbar.style.display = "none";
+        } else {
+            floatingNavbar.style.display = "none";
         }
-    }
 
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.scrollY;
-        toggleNavbar(currentScroll);
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        lastScrollTop = currentScroll;
     });
 </script>
-</script>
 
-
-    
 </body>
 </html>

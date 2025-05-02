@@ -65,13 +65,13 @@
             <p>Our vision is to be a premier university known for shaping global leaders and inspiring positive change.</p>
         
             <h2>Core Values</h2>
-            <p>Excellence
+            <p>Excellence<br>
 
-                Innovation
+                Innovation<br>
                 
-                Diversity
+                Diversity<br>
                 
-                Community engagement
+                Community engagement<br>
                 
                 Integrity</p>
 
@@ -94,27 +94,26 @@
         
         
     </header>
-<script>
-    let lastScrollTop = 0;
-    const originalNavbar = document.getElementById('original-navbar');
-    const floatingNavbar = document.getElementById('floating-navbar');
-
-    function toggleNavbar(currentScroll) {
-        if (currentScroll <= 0) {
-            floatingNavbar.style.display = "none";
-            originalNavbar.style.display = "flex";
-        } else {
-            floatingNavbar.style.display = "flex";
-            originalNavbar.style.display = "none";
-        }
-    }
-
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.scrollY;
-        toggleNavbar(currentScroll);
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-</script>
-</script>
+    <script>
+        let lastScrollTop = 0;
+        const originalNavbar = document.getElementById('original-navbar');
+        const floatingNavbar = document.getElementById('floating-navbar');
+    
+        window.addEventListener('scroll', function () {
+            const currentScroll = window.scrollY;
+    
+            if (currentScroll <= 0) {
+                floatingNavbar.style.display = "none";
+                originalNavbar.style.display = "flex";
+            } else if (currentScroll < lastScrollTop) {
+                floatingNavbar.style.display = "flex";
+                originalNavbar.style.display = "none";
+            } else {
+                floatingNavbar.style.display = "none";
+            }
+    
+            lastScrollTop = currentScroll;
+        });
+    </script>
 </body>
 </html>
